@@ -1,6 +1,58 @@
 <%@ page import="java.sql.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+    }
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    th {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    tr:hover {
+        background-color: #ddd;
+    }
+    
+    button {
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    button:hover {
+        opacity: 0.8;
+    }
+    
+    .borrow-btn {
+        background-color: #008CBA;
+        color: white;
+    }
+    
+    .disabled-btn {
+        background-color: #aaa;
+        color: white;
+        cursor: not-allowed;
+    }
+</style>
+
+
 <%
     String url = "jdbc:mysql://localhost:3306/library";
     String user = "root";
