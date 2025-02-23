@@ -19,6 +19,25 @@
             };
             xhr.send();
         }
+        
+        function searchBooks() {
+            var keyword = document.getElementById("searchInput").value.trim();
+            var category = document.getElementById("searchCategory").value;
+
+            if (keyword === "") {
+                document.getElementById("searchResults").innerHTML = "";
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "searchResults.jsp?keyword=" + encodeURIComponent(keyword) + "&category=" + encodeURIComponent(category), true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("searchResults").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
     </script>
 </head>
 <body>
